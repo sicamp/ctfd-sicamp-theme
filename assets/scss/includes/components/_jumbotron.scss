@@ -1,14 +1,8 @@
 /* Jumbotron styles
 -------------------------------------------------- */
 
-// Move down content because we have a fixed navbar that is 3.5rem tall
-main {
-  padding-top: 3.5rem;
-}
-
 .jumbotron {
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
+  padding-block: 2.5rem;
   text-align: center;
 }
 

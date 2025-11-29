@@ -19,11 +19,14 @@
     10: 2.50rem, /* 40px */
   ),
 
+  $navbar-nav-link-padding-x: 1rem,
+
   $dark: #434c55,
   $blue: #0969da,
   $green: #39b54a,
 );
 
+@use "includes/components/navbar";
 @use "includes/components/table";
 @use "includes/components/jumbotron";
 @use "includes/components/challenge";
