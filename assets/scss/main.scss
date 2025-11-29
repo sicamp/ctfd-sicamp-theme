@@ -1,6 +1,24 @@
 @use "bootstrap/scss/bootstrap" as * with (
   $font-family-sans-serif: #{ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji", Arial, Helvetica},
 
+  $h1-font-size: 1.875rem,
+  $h2-font-size: 1.5rem,
+  $h3-font-size: 1.124rem,
+  $h4-font-size: 1rem,
+  $h5-font-size: 1rem,
+  $h6-font-size: 1rem,
+
+  $spacers: (
+    0:  0,
+    1:  0.25rem, /*  4px */
+    2:  0.50rem, /*  8px */
+    3:  0.75rem, /* 12px */ 
+    4:  1.00rem, /* 16px */
+    5:  1.25rem, /* 20px */
+    6:  1.50rem, /* 24px */
+    10: 2.50rem, /* 40px */
+  ),
+
   $info: #5c728f
 );
 
