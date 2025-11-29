@@ -1,4 +1,6 @@
 @use "bootstrap/scss/bootstrap" as * with (
+  $font-family-sans-serif: #{ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji", Arial, Helvetica},
+
   $info: #5c728f
 );
 
@@ -18,8 +20,17 @@
 @use "includes/icons/flag-icons";
 
 h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Jost, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji", Arial, Helvetica;
+}
+
+h1,
 h2 {
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 2px;
 }
 
