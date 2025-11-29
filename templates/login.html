@@ -11,7 +11,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col offset-md-2 col-lg-6 offset-lg-3">
+      <div class="col-md-4 col mx-auto">
         {% include "components/errors.html" %}
 
         {% if integrations.mlc() %}
@@ -24,25 +24,25 @@
 
         {% with form = Forms.auth.LoginForm() %}
           <form method="post" accept-charset="utf-8">
-            <div class="mb-3">
+            <div class="mb-6">
               <b>{{ form.name.label(class="form-label") }}</b>
               {{ form.name(class="form-control", value=name, autocomplete="username email") }}
             </div>
 
-            <div class="mb-3">
+            <div class="mb-6">
               <b>{{ form.password.label(class="form-label") }}</b>
               {{ form.password(class="form-control", value=password, autocomplete="current-password") }}
             </div>
 
-            <div class="row pt-3">
-              <div class="col-6 col-md-8">
-                <a class="align-middle" href="{{ url_for('auth.reset_password') }}">
-                  {% trans %}Forgot your password?{% endtrans %}
-                </a>
+            <div class="row pt-3 align-items-baseline">
+              <div class="col-6 col-md-4">
+                {{ form.submit(class="btn btn-block btn-success") }}
               </div>
 
-              <div class="col-6 col-md-4">
-                {{ form.submit(class="btn btn-block btn-primary w-100") }}
+              <div class="col-6 col-md-8 text-end">
+                <a href="{{ url_for('auth.reset_password') }}">
+                  {% trans %}Forgot your password?{% endtrans %}
+                </a>
               </div>
             </div>
 
