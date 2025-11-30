@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 
 import CTFd from "./index";
 
-import { Modal, Tab, Tooltip } from "bootstrap";
+import { Offcanvas, Modal, Tab, Tooltip } from "bootstrap";
 import highlight from "./theme/highlight";
 
 function addTargetBlank(html) {
@@ -83,37 +83,6 @@ Alpine.data("Challenge", () => ({
     highlight();
   },
 
-  getStyles() {
-    let styles = {
-      "modal-dialog": true,
-    };
-    try {
-      let size = CTFd.config.themeSettings.challenge_window_size;
-      switch (size) {
-        case "sm":
-          styles["modal-sm"] = true;
-          break;
-        case "lg":
-          styles["modal-lg"] = true;
-          break;
-        case "xl":
-          styles["modal-xl"] = true;
-          break;
-        default:
-          break;
-      }
-    } catch (error) {
-      // Ignore errors with challenge window size
-      console.log("Error processing challenge_window_size");
-      console.log(error);
-    }
-    return styles;
-  },
-
-  async init() {
-    highlight();
-  },
-
   async showChallenge() {
     new Tab(this.$el).show();
   },
@@ -166,7 +135,7 @@ Alpine.data("Challenge", () => ({
   },
 
   async nextChallenge() {
-    let modal = Modal.getOrCreateInstance("[x-ref='challengeWindow']");
+    let modal = Offcanvas.getOrCreateInstance("[x-ref='challengeWindow']");
 
     // TODO: Get rid of this private attribute access
     // See https://github.com/twbs/bootstrap/issues/31266
@@ -343,7 +312,7 @@ Alpine.data("ChallengeBoard", () => ({
 
       // nextTick is required here because we're working in a callback
       Alpine.nextTick(() => {
-        let modal = Modal.getOrCreateInstance("[x-ref='challengeWindow']");
+        let modal = Offcanvas.getOrCreateInstance("[x-ref='challengeWindow']");
         // TODO: Get rid of this private attribute access
         // See https://github.com/twbs/bootstrap/issues/31266
         modal._element.addEventListener(

@@ -22,7 +22,7 @@
       @load-challenge.window="loadChallenge($event.detail)"
     >
       <div
-          x-ref="challengeWindow" id="challenge-window" class="modal fade" tabindex="-1" role="dialog" x-data=""
+          x-ref="challengeWindow" id="challenge-window" class="offcanvas offcanvas-end fade" tabindex="-1" role="dialog" x-data=""
           x-html="$store.challenge.data.view"
       ></div>
 
